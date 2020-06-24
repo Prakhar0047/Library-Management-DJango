@@ -1,0 +1,18 @@
+{% extends 'store/base.html' %}
+
+{% block body_block %}
+
+    <div style="margin-top: 30px; margin-left: 30px;">
+        <form method="get">
+            {{ filter.form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+        <ul>
+        {% for book in filter.qs %}
+            <br>
+            <li>{{ book.book_title }} - {{ book.book_id }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+{% endblock body_block %}

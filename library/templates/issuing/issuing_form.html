@@ -1,0 +1,26 @@
+{% extends 'store/base.html' %}
+
+{% block body_block %}
+    <div class="container">
+        <!-- ROW 1 -->
+        <div class="row">
+        <!-- COLUMN 1 -->
+        <div class="col-sm">
+            <div class="jumbotron">
+                <h1>Fill Details.</h1>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+        <!-- COLUMN 2 -->
+        <!-- <div class="col-sm">
+            {% for book in book_list %}
+                <h5>{{ book.book_title }}</h5>
+            {% endfor %} 
+        </div> -->
+        </div>
+    </div>
+{% endblock body_block %}

@@ -1,0 +1,25 @@
+{% extends 'store/base.html' %}
+
+{% block body_block %}
+<div class="container">
+  <!-- HORIZONTAL BOOK CARDS -->
+      {% for book in book_list %}
+        <div class="card mb-3" style="max-width: 1000px; max-height: 250px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="https://www.freeiconspng.com/uploads/pixel-wolf-icon-0.png" class="card-img" style="width: 200px; height: 200px; margin-top: 20px; margin-left: 20px;" alt="Not Found">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ book.book_title }}</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                {{ book.first_name }} {{ book.last_name }}
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <a href="{% url 'store:book_detail' pk=book.id %}" class="btn btn-primary">Read More &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %} 
+</div>
+{% endblock body_block %}

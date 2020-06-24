@@ -1,4 +1,4 @@
-"""library URL Configuration
+"""Library URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -14,8 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
+from django.urls import path, include
+from store import views
+from issuing import views
 urlpatterns = [
+    # ADMIN AND STUFF
     path('admin/', admin.site.urls),
+
+    # STORE
+    path('', include('store.urls')),
+
+    # ISSUING
+    path('issue/', include('issuing.urls')),
+
+    # HOME INDEX
+    # path('',views.bookList.as_view(), name='index'),
 ]

@@ -1,3 +1,4 @@
 from django.contrib import admin
+from issuing.models import issuing
 
-# Register your models here.
+admin.site.register(issuing)
